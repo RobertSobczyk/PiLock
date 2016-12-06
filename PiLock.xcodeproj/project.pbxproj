@@ -7,25 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23DA38FFC9B9F2F8DFB21041 /* libPods-PiLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1EFA517A6802A112443E97 /* libPods-PiLock.a */; };
 		9C58C0421DF7499100848C00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0411DF7499100848C00 /* main.m */; };
 		9C58C0451DF7499100848C00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0441DF7499100848C00 /* AppDelegate.m */; };
-		9C58C0481DF7499100848C00 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0471DF7499100848C00 /* ViewController.m */; };
+		9C58C0481DF7499100848C00 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0471DF7499100848C00 /* MainViewController.m */; };
 		9C58C04B1DF7499100848C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C58C0491DF7499100848C00 /* Main.storyboard */; };
 		9C58C04D1DF7499100848C00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C58C04C1DF7499100848C00 /* Assets.xcassets */; };
 		9C58C0501DF7499100848C00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C58C04E1DF7499100848C00 /* LaunchScreen.storyboard */; };
+		9C58C05C1DF74B9C00848C00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C58C05B1DF74B9C00848C00 /* GoogleService-Info.plist */; };
+		9C58C0601DF758A900848C00 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C05F1DF758A900848C00 /* FirstViewController.m */; };
+		9C58C0641DF759A700848C00 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0631DF759A700848C00 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30255728AB631D1EC30A57D1 /* Pods-PiLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiLock.release.xcconfig"; path = "Pods/Target Support Files/Pods-PiLock/Pods-PiLock.release.xcconfig"; sourceTree = "<group>"; };
+		643968144A0FB95B0C853A89 /* Pods-PiLock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiLock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PiLock/Pods-PiLock.debug.xcconfig"; sourceTree = "<group>"; };
+		7C1EFA517A6802A112443E97 /* libPods-PiLock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PiLock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C58C03D1DF7499100848C00 /* PiLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C58C0411DF7499100848C00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C58C0431DF7499100848C00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C58C0441DF7499100848C00 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9C58C0461DF7499100848C00 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9C58C0471DF7499100848C00 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9C58C0461DF7499100848C00 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		9C58C0471DF7499100848C00 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		9C58C04A1DF7499100848C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C58C04C1DF7499100848C00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C58C04F1DF7499100848C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C58C0511DF7499100848C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C58C05B1DF74B9C00848C00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9C58C05E1DF758A900848C00 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		9C58C05F1DF758A900848C00 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		9C58C0621DF759A700848C00 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9C58C0631DF759A700848C00 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DA38FFC9B9F2F8DFB21041 /* libPods-PiLock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C2E34AC0CEE94BC21480F44 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				643968144A0FB95B0C853A89 /* Pods-PiLock.debug.xcconfig */,
+				30255728AB631D1EC30A57D1 /* Pods-PiLock.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9C58C0341DF7499100848C00 = {
 			isa = PBXGroup;
 			children = (
 				9C58C03F1DF7499100848C00 /* PiLock */,
 				9C58C03E1DF7499100848C00 /* Products */,
+				7C2E34AC0CEE94BC21480F44 /* Pods */,
+				CED6D2EA38C09DDB064927F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +82,12 @@
 		9C58C03F1DF7499100848C00 /* PiLock */ = {
 			isa = PBXGroup;
 			children = (
-				9C58C0431DF7499100848C00 /* AppDelegate.h */,
-				9C58C0441DF7499100848C00 /* AppDelegate.m */,
-				9C58C0461DF7499100848C00 /* ViewController.h */,
-				9C58C0471DF7499100848C00 /* ViewController.m */,
-				9C58C0491DF7499100848C00 /* Main.storyboard */,
-				9C58C04C1DF7499100848C00 /* Assets.xcassets */,
-				9C58C04E1DF7499100848C00 /* LaunchScreen.storyboard */,
-				9C58C0511DF7499100848C00 /* Info.plist */,
+				9C58C0581DF749BF00848C00 /* MainView */,
+				9C58C0611DF7598800848C00 /* LoginView */,
+				9C58C05D1DF7588800848C00 /* FirstView */,
+				9C58C05A1DF74A7E00848C00 /* Plist */,
+				9C58C0571DF749A100848C00 /* AppDelegate */,
+				9C58C0591DF74A4000848C00 /* Storyboards */,
 				9C58C0401DF7499100848C00 /* Supporting Files */,
 			);
 			path = PiLock;
@@ -79,6 +101,69 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9C58C0571DF749A100848C00 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9C58C0431DF7499100848C00 /* AppDelegate.h */,
+				9C58C0441DF7499100848C00 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		9C58C0581DF749BF00848C00 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				9C58C0461DF7499100848C00 /* MainViewController.h */,
+				9C58C0471DF7499100848C00 /* MainViewController.m */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		9C58C0591DF74A4000848C00 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9C58C0491DF7499100848C00 /* Main.storyboard */,
+				9C58C04C1DF7499100848C00 /* Assets.xcassets */,
+				9C58C04E1DF7499100848C00 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		9C58C05A1DF74A7E00848C00 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				9C58C05B1DF74B9C00848C00 /* GoogleService-Info.plist */,
+				9C58C0511DF7499100848C00 /* Info.plist */,
+			);
+			name = Plist;
+			sourceTree = "<group>";
+		};
+		9C58C05D1DF7588800848C00 /* FirstView */ = {
+			isa = PBXGroup;
+			children = (
+				9C58C05E1DF758A900848C00 /* FirstViewController.h */,
+				9C58C05F1DF758A900848C00 /* FirstViewController.m */,
+			);
+			name = FirstView;
+			sourceTree = "<group>";
+		};
+		9C58C0611DF7598800848C00 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				9C58C0621DF759A700848C00 /* LoginViewController.h */,
+				9C58C0631DF759A700848C00 /* LoginViewController.m */,
+			);
+			name = LoginView;
+			sourceTree = "<group>";
+		};
+		CED6D2EA38C09DDB064927F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C1EFA517A6802A112443E97 /* libPods-PiLock.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C58C0541DF7499100848C00 /* Build configuration list for PBXNativeTarget "PiLock" */;
 			buildPhases = (
+				1BD790BA5A181A963BD4313F /* [CP] Check Pods Manifest.lock */,
 				9C58C0391DF7499100848C00 /* Sources */,
 				9C58C03A1DF7499100848C00 /* Frameworks */,
 				9C58C03B1DF7499100848C00 /* Resources */,
+				7D6B250F1CA5DAE3075B8257 /* [CP] Embed Pods Frameworks */,
+				E6733295F9C0B9427A24F23E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C58C0501DF7499100848C00 /* LaunchScreen.storyboard in Resources */,
+				9C58C05C1DF74B9C00848C00 /* GoogleService-Info.plist in Resources */,
 				9C58C04D1DF7499100848C00 /* Assets.xcassets in Resources */,
 				9C58C04B1DF7499100848C00 /* Main.storyboard in Resources */,
 			);
@@ -146,14 +235,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1BD790BA5A181A963BD4313F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7D6B250F1CA5DAE3075B8257 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PiLock/Pods-PiLock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6733295F9C0B9427A24F23E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PiLock/Pods-PiLock-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9C58C0391DF7499100848C00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C58C0481DF7499100848C00 /* ViewController.m in Sources */,
+				9C58C0481DF7499100848C00 /* MainViewController.m in Sources */,
 				9C58C0451DF7499100848C00 /* AppDelegate.m in Sources */,
 				9C58C0421DF7499100848C00 /* main.m in Sources */,
+				9C58C0601DF758A900848C00 /* FirstViewController.m in Sources */,
+				9C58C0641DF759A700848C00 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +408,7 @@
 		};
 		9C58C0551DF7499100848C00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 643968144A0FB95B0C853A89 /* Pods-PiLock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WG3P9GAF88;
@@ -281,6 +421,7 @@
 		};
 		9C58C0561DF7499100848C00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30255728AB631D1EC30A57D1 /* Pods-PiLock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WG3P9GAF88;
@@ -310,6 +451,7 @@
 				9C58C0561DF7499100848C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
