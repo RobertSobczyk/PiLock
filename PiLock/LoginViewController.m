@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UIViewController+Alert.h"
+#import "MainViewController.h"
 #import "AppDelegate.h"
 
 @import FirebaseAuth;
@@ -93,7 +94,9 @@
         
             [self.navigationController popViewControllerAnimated:YES];
             //To do - segue to scanner
-            //[self performSegueWithIdentifier:@"" sender:self];
+            //[self performSegueWithIdentifier:@"LoginViewShowMain" sender:self];
+            MainViewController *MainController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+            [self presentViewController:MainController animated:YES completion:nil];
     }];
     
 }
@@ -108,9 +111,10 @@
                 return;
             }
         
-        [self.navigationController popViewControllerAnimated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
         //To do - segue to scanner
-        //[self performSegueWithIdentifier:@"" sender:self];
+            MainViewController *MainController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+            [self presentViewController:MainController animated:YES completion:nil];
     }];
     
 }

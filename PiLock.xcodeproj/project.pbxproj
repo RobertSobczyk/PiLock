@@ -17,6 +17,8 @@
 		9C58C05C1DF74B9C00848C00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C58C05B1DF74B9C00848C00 /* GoogleService-Info.plist */; };
 		9C58C0601DF758A900848C00 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C05F1DF758A900848C00 /* FirstViewController.m */; };
 		9C58C0641DF759A700848C00 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0631DF759A700848C00 /* LoginViewController.m */; };
+		9C5F2FBC1E0596B0009A06AB /* QR Code_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5F2FBB1E0596B0009A06AB /* QR Code_000000_100.png */; };
+		9C71044D1E01B7BE00AE6A8B /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C71044C1E01B7BE00AE6A8B /* ScannerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		9C58C05F1DF758A900848C00 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		9C58C0621DF759A700848C00 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9C58C0631DF759A700848C00 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9C5F2FBB1E0596B0009A06AB /* QR Code_000000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "QR Code_000000_100.png"; path = "Design/QR Code_000000_100.png"; sourceTree = "<group>"; };
+		9C5F2FBD1E059969009A06AB /* PiLock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PiLock.entitlements; sourceTree = "<group>"; };
+		9C71044B1E01B7BE00AE6A8B /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
+		9C71044C1E01B7BE00AE6A8B /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +88,10 @@
 		9C58C03F1DF7499100848C00 /* PiLock */ = {
 			isa = PBXGroup;
 			children = (
+				9C5F2FBD1E059969009A06AB /* PiLock.entitlements */,
+				9C5F2FBA1E059686009A06AB /* Design */,
 				9C58C0581DF749BF00848C00 /* MainView */,
+				9C71044A1E01B6DD00AE6A8B /* ScannerView */,
 				9C58C0611DF7598800848C00 /* LoginView */,
 				9C58C05D1DF7588800848C00 /* FirstView */,
 				9C58C05A1DF74A7E00848C00 /* Plist */,
@@ -156,6 +165,23 @@
 			name = LoginView;
 			sourceTree = "<group>";
 		};
+		9C5F2FBA1E059686009A06AB /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F2FBB1E0596B0009A06AB /* QR Code_000000_100.png */,
+			);
+			name = Design;
+			sourceTree = "<group>";
+		};
+		9C71044A1E01B6DD00AE6A8B /* ScannerView */ = {
+			isa = PBXGroup;
+			children = (
+				9C71044B1E01B7BE00AE6A8B /* ScannerViewController.h */,
+				9C71044C1E01B7BE00AE6A8B /* ScannerViewController.m */,
+			);
+			name = ScannerView;
+			sourceTree = "<group>";
+		};
 		CED6D2EA38C09DDB064927F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +226,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = WG3P9GAF88;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -230,6 +261,7 @@
 				9C58C05C1DF74B9C00848C00 /* GoogleService-Info.plist in Resources */,
 				9C58C04D1DF7499100848C00 /* Assets.xcassets in Resources */,
 				9C58C04B1DF7499100848C00 /* Main.storyboard in Resources */,
+				9C5F2FBC1E0596B0009A06AB /* QR Code_000000_100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C58C0481DF7499100848C00 /* MainViewController.m in Sources */,
+				9C71044D1E01B7BE00AE6A8B /* ScannerViewController.m in Sources */,
 				9C58C0451DF7499100848C00 /* AppDelegate.m in Sources */,
 				9C58C0421DF7499100848C00 /* main.m in Sources */,
 				9C58C0601DF758A900848C00 /* FirstViewController.m in Sources */,
@@ -411,6 +444,7 @@
 			baseConfigurationReference = 643968144A0FB95B0C853A89 /* Pods-PiLock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PiLock/PiLock.entitlements;
 				DEVELOPMENT_TEAM = WG3P9GAF88;
 				INFOPLIST_FILE = PiLock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -424,6 +458,7 @@
 			baseConfigurationReference = 30255728AB631D1EC30A57D1 /* Pods-PiLock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PiLock/PiLock.entitlements;
 				DEVELOPMENT_TEAM = WG3P9GAF88;
 				INFOPLIST_FILE = PiLock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

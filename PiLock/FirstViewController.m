@@ -17,30 +17,34 @@
 @implementation FirstViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
     
     [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth,
                                                     FIRUser *_Nullable user) {
         
         if (user == nil) {
             // No user is signed in.
+            NSLog(@"USER not signed %@", user);
             [self.navigationController popViewControllerAnimated:YES];
-            NSLog(@"USER %@", user);
             [self performSegueWithIdentifier:@"FirstViewShowLogin" sender:self];
             
-        } else {
+        }else{
             // User is signed in.
+            NSLog(@"USER signed %@", user);
             [self.navigationController popViewControllerAnimated:YES];
-            NSLog(@"USER %@", user);
             [self performSegueWithIdentifier:@"FirstViewShowMain" sender:self];
+            
         }
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation
