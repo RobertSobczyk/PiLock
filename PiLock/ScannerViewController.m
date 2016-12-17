@@ -48,7 +48,7 @@
     }
 
 }
-- (IBAction)openScanner:(id)sender {
+- (IBAction)openScanner:(UIButton *)sender {
     
     _ref = [[FIRDatabase database] reference];
     NSString *userID = [FIRAuth auth].currentUser.uid;
@@ -68,19 +68,36 @@
         [[_ref child:@"barcodes"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
             if ([snapshot.key isEqualToString:resultAsString])
             {
+                [[[_ref child:@"users"] child:userID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
                 
+                if ([snapshot.value[@"haveCode"] isEqualToString:@"true"]){
+                    [self showMessagePrompt:@"Posiadasz już szafkę"];
+                }
+                else
+                {
                 [[[_ref child:@"barcodes"] child:resultAsString] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
                     
-                    if ([snapshot.value[@"usedBy"] isEqualToString:emptyString]){
-                        [[[_ref child:@"barcodes"] child:resultAsString]
-                         setValue:@{@"name": snapshot.value[@"name"], @"usedBy": userID}];
-                        //Dopisanie usera do szafki
-                    }
-                    else
-                    {
-                        [self showMessagePrompt:@"Szafka jest zajęta"];
-                    }
-                }];
+                    
+                        if ([snapshot.value[@"usedBy"] isEqualToString:emptyString]){
+                            [[[_ref child:@"barcodes"] child:resultAsString]
+                             setValue:@{@"name": snapshot.value[@"name"], @"usedBy": userID}];
+                            [[[_ref child:@"users"] child:userID]
+                             setValue:@{@"username": userID, @"haveCode": @"true"}];
+                            //Dopisanie usera do szafki
+                        }
+                        else
+                        {
+                             if ([snapshot.value[@"usedBy"] isEqualToString:userID]){
+                                 [self showMessagePrompt:@"Szafka jest zajęta przez Ciebie"];
+                             }
+                             else
+                             {
+                                 [self showMessagePrompt:@"Szafka jest zajęta"];
+                             }
+                        }
+                
+                }];}
+                    }];
                 
                 
                 
@@ -94,11 +111,11 @@
         }];
         
         
-        //[self dismissViewControllerAnimated:YES completion:NULL];
+        [self dismissViewControllerAnimated:YES completion:NULL];
         
     }];
     
-    //[self presentViewController:vc animated:YES completion:NULL];
+    [self presentViewController:vc animated:YES completion:NULL];
     
     
 }

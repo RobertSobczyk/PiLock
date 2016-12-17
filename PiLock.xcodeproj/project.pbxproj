@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		23DA38FFC9B9F2F8DFB21041 /* libPods-PiLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1EFA517A6802A112443E97 /* libPods-PiLock.a */; };
+		9C2066611E05B9A7007A2FEB /* libQRCodeReaderViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C20665F1E05B9A7007A2FEB /* libQRCodeReaderViewController.a */; };
+		9C2066621E05B9A7007A2FEB /* libUIViewController+Alert.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2066601E05B9A7007A2FEB /* libUIViewController+Alert.a */; };
 		9C58C0421DF7499100848C00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0411DF7499100848C00 /* main.m */; };
 		9C58C0451DF7499100848C00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0441DF7499100848C00 /* AppDelegate.m */; };
 		9C58C0481DF7499100848C00 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0471DF7499100848C00 /* MainViewController.m */; };
@@ -25,6 +27,8 @@
 		30255728AB631D1EC30A57D1 /* Pods-PiLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiLock.release.xcconfig"; path = "Pods/Target Support Files/Pods-PiLock/Pods-PiLock.release.xcconfig"; sourceTree = "<group>"; };
 		643968144A0FB95B0C853A89 /* Pods-PiLock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiLock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PiLock/Pods-PiLock.debug.xcconfig"; sourceTree = "<group>"; };
 		7C1EFA517A6802A112443E97 /* libPods-PiLock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PiLock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C20665F1E05B9A7007A2FEB /* libQRCodeReaderViewController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libQRCodeReaderViewController.a; path = "../../../../Library/Developer/Xcode/DerivedData/PiLock-fexqnrtalfdyygeondnnwoiilkms/Build/Products/Debug-iphoneos/QRCodeReaderViewController/libQRCodeReaderViewController.a"; sourceTree = "<group>"; };
+		9C2066601E05B9A7007A2FEB /* libUIViewController+Alert.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUIViewController+Alert.a"; path = "../../../../Library/Developer/Xcode/DerivedData/PiLock-fexqnrtalfdyygeondnnwoiilkms/Build/Products/Debug-iphoneos/UIViewController+Alert/libUIViewController+Alert.a"; sourceTree = "<group>"; };
 		9C58C03D1DF7499100848C00 /* PiLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C58C0411DF7499100848C00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C58C0431DF7499100848C00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2066611E05B9A7007A2FEB /* libQRCodeReaderViewController.a in Frameworks */,
+				9C2066621E05B9A7007A2FEB /* libUIViewController+Alert.a in Frameworks */,
 				23DA38FFC9B9F2F8DFB21041 /* libPods-PiLock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,7 +94,6 @@
 		9C58C03F1DF7499100848C00 /* PiLock */ = {
 			isa = PBXGroup;
 			children = (
-				9C5F2FBD1E059969009A06AB /* PiLock.entitlements */,
 				9C5F2FBA1E059686009A06AB /* Design */,
 				9C58C0581DF749BF00848C00 /* MainView */,
 				9C71044A1E01B6DD00AE6A8B /* ScannerView */,
@@ -97,6 +102,7 @@
 				9C58C05A1DF74A7E00848C00 /* Plist */,
 				9C58C0571DF749A100848C00 /* AppDelegate */,
 				9C58C0591DF74A4000848C00 /* Storyboards */,
+				9C5F2FBD1E059969009A06AB /* PiLock.entitlements */,
 				9C58C0401DF7499100848C00 /* Supporting Files */,
 			);
 			path = PiLock;
@@ -185,6 +191,8 @@
 		CED6D2EA38C09DDB064927F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C20665F1E05B9A7007A2FEB /* libQRCodeReaderViewController.a */,
+				9C2066601E05B9A7007A2FEB /* libUIViewController+Alert.a */,
 				7C1EFA517A6802A112443E97 /* libPods-PiLock.a */,
 			);
 			name = Frameworks;
@@ -391,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -432,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
