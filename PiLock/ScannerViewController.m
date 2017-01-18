@@ -20,23 +20,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.dataSource=self;
+    self.tableView.delegate=self;
 }
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    _codes = [[NSMutableArray alloc] init];
+    [_codes removeAllObjects];
+    [self dataLoad];
+}
+
+-(void)dataLoad {
+
+    _ref = [[FIRDatabase database] reference];
+    
+    _codes = [[NSMutableArray alloc] init];
+    
+    [[_ref child:@"barcodes"]
+     observeEventType:FIRDataEventTypeChildAdded
+     withBlock:^(FIRDataSnapshot *snapshot)
+    {
+         if ([snapshot.value[@"usedBy"] isEqualToString:@""])
+         {
+             [_codes addObject:snapshot.value[@"name"]];
+         }
+        [self.tableView reloadData];
+    }];
+    [self.tableView reloadData];
+
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (IBAction)didLogout:(id)sender {
     NSError *error;
     [[FIRAuth auth] signOut:&error];
@@ -55,68 +78,86 @@
     
     QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
     
-    // Instantiate the view controller
-    QRCodeReaderViewController *vc = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
+    QRCodeReaderViewController *vc = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Anuluj" codeReader:reader startScanningAtLoad:YES];
     
     vc.modalPresentationStyle = UIModalPresentationFormSheet;
     
     
     [reader setCompletionWithBlock:^(NSString *resultAsString) {
-        NSString *emptyString = @"";
         
-        _ref = [[FIRDatabase database] reference];
         [[_ref child:@"barcodes"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-            if ([snapshot.key isEqualToString:resultAsString])
-            {
+            if ([snapshot.key isEqualToString:resultAsString]){
+                
                 [[[_ref child:@"users"] child:userID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                NSString *userMail = snapshot.value[@"username"];
                 
-                if ([snapshot.value[@"haveCode"] isEqualToString:@"true"]){
-                    [self showMessagePrompt:@"Posiadasz już szafkę"];
-                }
-                else
-                {
-                [[[_ref child:@"barcodes"] child:resultAsString] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                    if ([snapshot.value[@"haveCode"] isEqualToString:@"true"]){
+                        [self showMessagePrompt:@"Posiadasz już szafkę"];
+                    }
+                    else
+                    {
+                        [[[_ref child:@"barcodes"] child:resultAsString] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
                     
-                    
-                        if ([snapshot.value[@"usedBy"] isEqualToString:emptyString]){
-                            [[[_ref child:@"barcodes"] child:resultAsString]
-                             setValue:@{@"name": snapshot.value[@"name"], @"usedBy": userID}];
-                            [[[_ref child:@"users"] child:userID]
-                             setValue:@{@"username": userID, @"haveCode": @"true"}];
-                            //Dopisanie usera do szafki
-                        }
-                        else
-                        {
-                             if ([snapshot.value[@"usedBy"] isEqualToString:userID]){
-                                 [self showMessagePrompt:@"Szafka jest zajęta przez Ciebie"];
-                             }
-                             else
-                             {
-                                 [self showMessagePrompt:@"Szafka jest zajęta"];
-                             }
-                        }
-                
-                }];}
-                    }];
-                
-                
-                
-                
-                
-                
+                            if ([snapshot.value[@"usedBy"] isEqualToString:@""]){
+                                [[[_ref child:@"barcodes"] child:resultAsString]
+                                 setValue:@{@"name": snapshot.value[@"name"], @"usedBy": userID, @"open": snapshot.value[@"open"] }];
+                                [[[_ref child:@"users"] child:userID]
+                                 setValue:@{@"username": userMail, @"haveCode": @"true"}];
+                                //Dopisanie usera do szafki
+                            }
+                            else
+                            {
+                                if ([snapshot.value[@"usedBy"] isEqualToString:userID]){
+                                    [self showMessagePrompt:@"Szafka jest zajęta przez Ciebie"];
+                                }
+                                else
+                                {
+                                    [self showMessagePrompt:@"Szafka jest zajęta"];
+                                }
+                            }
+                        }];}
+                }];
             }
-            
             NSLog(@"nazwa szafki %@",snapshot.value[@"name"]);
             NSLog(@"Snapshot key %@", snapshot.key);
         }];
-        
         
         [self dismissViewControllerAnimated:YES completion:NULL];
         
     }];
     
     [self presentViewController:vc animated:YES completion:NULL];
-    
-    
 }
+
+- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+     NSLog(@"%@", result);
+    }];
+}
+
+- (void)readerDidCancel:(QRCodeReaderViewController *)reader
+{
+    NSLog(@" Anuluj naciśnięte ");
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return _codes.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    static NSString *cellId=@"Cell";
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell==Nil){
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
+    }
+
+    cell.textLabel.text=[_codes objectAtIndex:indexPath.row];
+    return cell;
+}
+
 @end
+

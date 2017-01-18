@@ -36,5 +36,9 @@
 	<string>1:366621245987:ios:52584c5551f9bf01</string>
 	<key>DATABASE_URL</key>
 	<string>https://pilock-2062b.firebaseio.com</string>
+	<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
+	<string>NO</string>
+	<key>FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED</key>
+	<string>YES</string>
 </dict>
 </plist>

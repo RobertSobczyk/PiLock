@@ -21,6 +21,16 @@
 		9C58C0641DF759A700848C00 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58C0631DF759A700848C00 /* LoginViewController.m */; };
 		9C5F2FBC1E0596B0009A06AB /* QR Code_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5F2FBB1E0596B0009A06AB /* QR Code_000000_100.png */; };
 		9C71044D1E01B7BE00AE6A8B /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C71044C1E01B7BE00AE6A8B /* ScannerViewController.m */; };
+		9C8A3D351E294E5F00965A75 /* Icon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D2F1E294E5F00965A75 /* Icon-29@2x.png */; };
+		9C8A3D361E294E5F00965A75 /* Icon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D301E294E5F00965A75 /* Icon-29@3x.png */; };
+		9C8A3D371E294E5F00965A75 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D311E294E5F00965A75 /* Icon-40@2x.png */; };
+		9C8A3D381E294E5F00965A75 /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D321E294E5F00965A75 /* Icon-40@3x.png */; };
+		9C8A3D391E294E5F00965A75 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D331E294E5F00965A75 /* Icon-60@2x.png */; };
+		9C8A3D3A1E294E5F00965A75 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D341E294E5F00965A75 /* Icon-60@3x.png */; };
+		9C8A3D3E1E2953FA00965A75 /* iTunesArtwork-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D3D1E2953FA00965A75 /* iTunesArtwork-512.png */; };
+		9C8A3D421E29556200965A75 /* Unlock_629755_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D401E29556200965A75 /* Unlock_629755_100.png */; };
+		9C8A3D451E2F8CAC00965A75 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D431E2F8CAC00965A75 /* Icon-76.png */; };
+		9C8A3D461E2F8CAC00965A75 /* Lock_ff0000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A3D441E2F8CAC00965A75 /* Lock_ff0000_100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +58,16 @@
 		9C5F2FBD1E059969009A06AB /* PiLock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PiLock.entitlements; sourceTree = "<group>"; };
 		9C71044B1E01B7BE00AE6A8B /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
 		9C71044C1E01B7BE00AE6A8B /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
+		9C8A3D2F1E294E5F00965A75 /* Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-29@2x.png"; path = "Design/Icon-29@2x.png"; sourceTree = "<group>"; };
+		9C8A3D301E294E5F00965A75 /* Icon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-29@3x.png"; path = "Design/Icon-29@3x.png"; sourceTree = "<group>"; };
+		9C8A3D311E294E5F00965A75 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@2x.png"; path = "Design/Icon-40@2x.png"; sourceTree = "<group>"; };
+		9C8A3D321E294E5F00965A75 /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@3x.png"; path = "Design/Icon-40@3x.png"; sourceTree = "<group>"; };
+		9C8A3D331E294E5F00965A75 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Design/Icon-60@2x.png"; sourceTree = "<group>"; };
+		9C8A3D341E294E5F00965A75 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "Design/Icon-60@3x.png"; sourceTree = "<group>"; };
+		9C8A3D3D1E2953FA00965A75 /* iTunesArtwork-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork-512.png"; path = "Design/iTunesArtwork-512.png"; sourceTree = "<group>"; };
+		9C8A3D401E29556200965A75 /* Unlock_629755_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Unlock_629755_100.png; path = Design/Unlock_629755_100.png; sourceTree = "<group>"; };
+		9C8A3D431E2F8CAC00965A75 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Design/Icon-76.png"; sourceTree = "<group>"; };
+		9C8A3D441E2F8CAC00965A75 /* Lock_ff0000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Lock_ff0000_100.png; path = Design/Lock_ff0000_100.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +194,16 @@
 		9C5F2FBA1E059686009A06AB /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				9C8A3D2F1E294E5F00965A75 /* Icon-29@2x.png */,
+				9C8A3D301E294E5F00965A75 /* Icon-29@3x.png */,
+				9C8A3D311E294E5F00965A75 /* Icon-40@2x.png */,
+				9C8A3D321E294E5F00965A75 /* Icon-40@3x.png */,
+				9C8A3D331E294E5F00965A75 /* Icon-60@2x.png */,
+				9C8A3D341E294E5F00965A75 /* Icon-60@3x.png */,
+				9C8A3D431E2F8CAC00965A75 /* Icon-76.png */,
+				9C8A3D441E2F8CAC00965A75 /* Lock_ff0000_100.png */,
+				9C8A3D401E29556200965A75 /* Unlock_629755_100.png */,
+				9C8A3D3D1E2953FA00965A75 /* iTunesArtwork-512.png */,
 				9C5F2FBB1E0596B0009A06AB /* QR Code_000000_100.png */,
 			);
 			name = Design;
@@ -266,10 +296,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C58C0501DF7499100848C00 /* LaunchScreen.storyboard in Resources */,
+				9C8A3D361E294E5F00965A75 /* Icon-29@3x.png in Resources */,
+				9C8A3D461E2F8CAC00965A75 /* Lock_ff0000_100.png in Resources */,
 				9C58C05C1DF74B9C00848C00 /* GoogleService-Info.plist in Resources */,
+				9C8A3D451E2F8CAC00965A75 /* Icon-76.png in Resources */,
 				9C58C04D1DF7499100848C00 /* Assets.xcassets in Resources */,
+				9C8A3D351E294E5F00965A75 /* Icon-29@2x.png in Resources */,
 				9C58C04B1DF7499100848C00 /* Main.storyboard in Resources */,
 				9C5F2FBC1E0596B0009A06AB /* QR Code_000000_100.png in Resources */,
+				9C8A3D3A1E294E5F00965A75 /* Icon-60@3x.png in Resources */,
+				9C8A3D371E294E5F00965A75 /* Icon-40@2x.png in Resources */,
+				9C8A3D381E294E5F00965A75 /* Icon-40@3x.png in Resources */,
+				9C8A3D421E29556200965A75 /* Unlock_629755_100.png in Resources */,
+				9C8A3D391E294E5F00965A75 /* Icon-60@2x.png in Resources */,
+				9C8A3D3E1E2953FA00965A75 /* iTunesArtwork-512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

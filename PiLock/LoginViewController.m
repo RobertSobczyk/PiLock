@@ -10,6 +10,7 @@
 #import "UIViewController+Alert.h"
 #import "MainViewController.h"
 #import "AppDelegate.h"
+#import "FirstViewController.h"
 
 @import FirebaseAuth;
 @import FirebaseDatabase;
@@ -55,7 +56,7 @@
                 return;
             }
             [self showMessagePrompt:@""];
-            [[[_ref child:@"users"] child:user.uid] setValue:@{@"username":email}];
+            [[[_ref child:@"users"] child:user.uid] setValue:@{@"username":email, @"haveCode": @"false"}];
             NSLog(@"%@ created", user.email);
             [self.navigationController popViewControllerAnimated:YES];
         }];
@@ -95,8 +96,8 @@
             [self.navigationController popViewControllerAnimated:YES];
             //To do - segue to scanner
             //[self performSegueWithIdentifier:@"LoginViewShowMain" sender:self];
-            MainViewController *MainController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-            [self presentViewController:MainController animated:YES completion:nil];
+            FirstViewController *FirstController = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstViewController"];
+            [self presentViewController:FirstController animated:YES completion:nil];
     }];
     
 }
@@ -113,8 +114,8 @@
         
             [self.navigationController popViewControllerAnimated:YES];
         //To do - segue to scanner
-            MainViewController *MainController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-            [self presentViewController:MainController animated:YES completion:nil];
+            FirstViewController *FirstController = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstViewController"];
+            [self presentViewController:FirstController animated:YES completion:nil];
     }];
     
 }

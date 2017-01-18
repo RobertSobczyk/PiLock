@@ -7,6 +7,8 @@
 //
 
 #import "FirstViewController.h"
+#import "ScannerViewController.h"
+#import "MainViewController.h"
 @import FirebaseAuth;
 @import FirebaseDatabase;
 
@@ -37,9 +39,37 @@
             
         }else{
             // User is signed in.
-            NSLog(@"USER signed %@", user);
-            [self.navigationController popViewControllerAnimated:YES];
-            [self performSegueWithIdentifier:@"FirstViewShowMain" sender:self];
+            // NSLog(@"USER signed %@", user);
+            
+            _valid = @"True";
+            _ref = [[FIRDatabase database] reference];
+            
+            [[_ref child:@"barcodes"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                NSString *userID = [FIRAuth auth].currentUser.uid;
+                
+                if ( [_valid  isEqual: @"True"])
+                {
+                    if ([snapshot.value[@"usedBy"] isEqualToString:userID]){
+                        
+                        NSLog(@"Zalogowany user jest dopisany do szafki");
+                        _valid = @"False";
+                        MainViewController *MainController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+                        [self presentViewController:MainController animated:YES completion:nil];
+                        
+                        
+                    }else{
+                        
+                        NSLog(@"Zalogowany user NIE jest dopisany do szafki");
+                        
+                        ScannerViewController *SkannerController = [self.storyboard instantiateViewControllerWithIdentifier:@"ScannerViewController"];
+                        [self presentViewController:SkannerController animated:YES completion:nil];
+                    }
+                    
+                }
+            }];
+            
+            // [self.navigationController popViewControllerAnimated:YES];
+            // [self performSegueWithIdentifier:@"FirstViewShowMain" sender:self];
             
         }
     }];

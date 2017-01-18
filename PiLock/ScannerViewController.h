@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 @import FirebaseDatabase;
 
-@interface ScannerViewController : UIViewController
+@interface ScannerViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, readonly, strong) FIRDatabaseReference * ref;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *codes;
+@property (strong, nonatomic) FIRDatabaseReference *codesRef;
 
 @end

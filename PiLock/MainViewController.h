@@ -12,7 +12,7 @@
 
 @interface MainViewController : UIViewController
 @property (nonatomic, readonly, strong) FIRDatabaseReference *ref;
-@property (nonatomic,strong) NSString *valid;
+//@property (nonatomic,strong) NSString *valid;
 
 @end
 

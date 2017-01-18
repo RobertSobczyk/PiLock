@@ -22,13 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First view " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BJ-rr-T6A">
-                                <rect key="frame" x="149" y="222" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="iTunesArtwork-512.png" translatesAutoresizingMaskIntoConstraints="NO" id="xvK-QQ-jqL">
+                                <rect key="frame" x="37" y="159" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -39,7 +36,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fa2-Tl-4JU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-628" y="44"/>
+            <point key="canvasLocation" x="-628" y="43.628185907046479"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="29d-Iq-kaW">
@@ -63,12 +60,6 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didCreateAccount:" destination="9lt-xc-Noz" eventType="touchUpInside" id="PE6-E9-rKO"/>
                                 </connections>
@@ -202,55 +193,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQX-I5-lqi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQX-I5-lqi">
                                 <rect key="frame" x="311" y="617" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="didLogout:" destination="Xj0-sJ-phe" eventType="touchUpInside" id="GKz-Tz-O7B"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="( tu trafiamy z Main gdy user nie ma kodu)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiR-uH-rJX">
-                                <rect key="frame" x="32" y="50" width="327" height="143"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBz-3B-exv">
-                                <rect key="frame" x="153" y="406" width="68" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zk0-ne-lar">
+                                <rect key="frame" x="16" y="68" width="343" height="342"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FYO-iR-eVk">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="342"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gWb-9E-jCQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="342"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyBasicCell" id="Pke-LD-BcL">
+                                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pke-LD-BcL" id="YUi-a6-t4E">
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBz-3B-exv">
+                                <rect key="frame" x="153" y="486" width="68" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="BVe-mh-7Ij"/>
+                                    <constraint firstAttribute="height" constant="66" id="aMT-G8-gMk"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="QR Code_000000_100.png"/>
                                 <connections>
                                     <action selector="openScanner:" destination="Xj0-sJ-phe" eventType="touchUpInside" id="DLb-7s-7Su"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skanner view " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIj-Gq-0KT">
-                                <rect key="frame" x="24" y="50" width="327" height="143"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zk0-ne-lar" firstAttribute="leading" secondItem="h6C-gV-ad6" secondAttribute="leadingMargin" id="8dY-6q-a4v"/>
+                            <constraint firstItem="zk0-ne-lar" firstAttribute="trailing" secondItem="ZQX-I5-lqi" secondAttribute="trailing" id="L0s-IR-13k"/>
+                            <constraint firstItem="uQX-mX-bGi" firstAttribute="top" secondItem="tBz-3B-exv" secondAttribute="bottom" constant="115" id="Vgh-iq-ZPH"/>
+                            <constraint firstItem="zk0-ne-lar" firstAttribute="top" secondItem="VyE-NQ-VnV" secondAttribute="bottom" constant="48" id="dMK-Kl-gAC"/>
+                            <constraint firstItem="zk0-ne-lar" firstAttribute="centerX" secondItem="tBz-3B-exv" secondAttribute="centerX" id="eE0-vP-oOj"/>
+                            <constraint firstItem="zk0-ne-lar" firstAttribute="trailing" secondItem="h6C-gV-ad6" secondAttribute="trailingMargin" id="hzi-Fy-kzg"/>
+                            <constraint firstItem="tBz-3B-exv" firstAttribute="top" secondItem="zk0-ne-lar" secondAttribute="bottom" constant="76" id="nN3-Pc-hM4"/>
+                            <constraint firstAttribute="bottom" secondItem="ZQX-I5-lqi" secondAttribute="bottom" constant="20" symbolic="YES" id="qQt-En-Epl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="gWb-9E-jCQ" id="xRM-tj-k1Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gu-5q-ux7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="989.60000000000002" y="43.628185907046479"/>
+            <point key="canvasLocation" x="981.60000000000002" y="60.719640179910051"/>
         </scene>
     </scenes>
     <resources>
         <image name="QR Code_000000_100.png" width="96" height="96"/>
+        <image name="iTunesArtwork-512.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="20H-pH-FJa"/>
+        <segue reference="cIR-yd-jYk"/>
     </inferredMetricsTieBreakers>
 </document>

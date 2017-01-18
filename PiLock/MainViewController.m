@@ -19,30 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _valid = @"True";
-    _ref = [[FIRDatabase database] reference];
-    
-    [[_ref child:@"barcodes"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        NSString *userID = [FIRAuth auth].currentUser.uid;
-        
-        if ( [_valid  isEqual: @"True"])
-        {
-            if ([snapshot.value[@"usedBy"] isEqualToString:userID]){
-            
-                NSLog(@"Zalogowany user jest dopisany do szafki");
-                _valid = @"False";
-                
-            }else{
-                
-                NSLog(@"Zalogowany user NIE jest dopisany do szafki");
-                
-                ScannerViewController *SkannerController = [self.storyboard instantiateViewControllerWithIdentifier:@"ScannerViewController"];
-                [self presentViewController:SkannerController animated:YES completion:nil];
-            }
-            
-        }
-    }];
 }
 
 

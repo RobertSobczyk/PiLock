@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@import FirebaseAuth;
+@import FirebaseDatabase;
 
 @interface FirstViewController : UIViewController
+@property (nonatomic, readonly, strong) FIRDatabaseReference *ref;
+@property (nonatomic,strong) NSString *valid;
 @end
