@@ -102,7 +102,7 @@
                                 [[[_ref child:@"barcodes"] child:resultAsString]
                                  setValue:@{@"name": snapshot.value[@"name"], @"usedBy": userID, @"open": snapshot.value[@"open"] }];
                                 [[[_ref child:@"users"] child:userID]
-                                 setValue:@{@"username": userMail, @"haveCode": @"true"}];
+                                 setValue:@{@"username": userMail, @"haveCode": @"true", @"code":resultAsString}];
                                 //Dopisanie usera do szafki
                             }
                             else

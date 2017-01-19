@@ -41,21 +41,19 @@
             // User is signed in.
             // NSLog(@"USER signed %@", user);
             
-            _valid = @"True";
             _ref = [[FIRDatabase database] reference];
             
-            [[_ref child:@"barcodes"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-                NSString *userID = [FIRAuth auth].currentUser.uid;
+            NSString *userID = [FIRAuth auth].currentUser.uid;
+           [[[_ref child:@"users"] child:userID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
                 
-                if ( [_valid  isEqual: @"True"])
-                {
-                    if ([snapshot.value[@"usedBy"] isEqualToString:userID]){
+                
+               
+                    if ([snapshot.value[@"haveCode"] isEqualToString:@"true"]){
                         
                         NSLog(@"Zalogowany user jest dopisany do szafki");
                         _valid = @"False";
                         MainViewController *MainController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
                         [self presentViewController:MainController animated:YES completion:nil];
-                        
                         
                     }else{
                         
@@ -63,7 +61,7 @@
                         
                         ScannerViewController *SkannerController = [self.storyboard instantiateViewControllerWithIdentifier:@"ScannerViewController"];
                         [self presentViewController:SkannerController animated:YES completion:nil];
-                    }
+                    
                     
                 }
             }];

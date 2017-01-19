@@ -56,7 +56,7 @@
                 return;
             }
             [self showMessagePrompt:@""];
-            [[[_ref child:@"users"] child:user.uid] setValue:@{@"username":email, @"haveCode": @"false"}];
+            [[[_ref child:@"users"] child:user.uid] setValue:@{@"username":email, @"haveCode": @"false", @"code":@""}];
             NSLog(@"%@ created", user.email);
             [self.navigationController popViewControllerAnimated:YES];
         }];

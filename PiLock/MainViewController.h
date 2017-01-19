@@ -12,7 +12,8 @@
 
 @interface MainViewController : UIViewController
 @property (nonatomic, readonly, strong) FIRDatabaseReference *ref;
-//@property (nonatomic,strong) NSString *valid;
+@property (strong, nonatomic) IBOutlet UILabel *doorNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *doorStatusLabel;
 
 @end
 
